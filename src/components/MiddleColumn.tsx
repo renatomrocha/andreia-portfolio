@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 import chatbotProject from "../assets/chatbot_project.png";
+import BlurRevealText from "./BlurRevealText";
 import Marquee from "./Marquee";
 
 const projects = [
-  { title: "Project title", category: "Category", year: "2025", image: chatbotProject },
-  { title: "Project title", category: "Category", year: "2025" },
-  { title: "Project title", category: "Category", year: "2025" },
-  { title: "Project title", category: "Category", year: "2025" },
+  { title: "Project title", category: "Category", year: "2025", image: chatbotProject, projectRoute: "chatbot" },
+  { title: "Project title", category: "Category", year: "2025", projectRoute: "project-2" },
+  { title: "Project title", category: "Category", year: "2025", projectRoute: "project-3" },
+  { title: "Project title", category: "Category", year: "2025", projectRoute: "project-4" },
 ];
 
 function ProjectImage({ src }: { src?: string }) {
@@ -25,9 +27,9 @@ function ProjectImage({ src }: { src?: string }) {
   );
 }
 
-function ProjectCard({ title, category, year, image }: { title: string; category: string; year: string; image?: string }) {
+function ProjectCard({ title, category, year, image, projectRoute }: { title: string; category: string; year: string; image?: string; projectRoute: string }) {
   return (
-    <div>
+    <Link to={`/work/${projectRoute}`} className="block">
       <ProjectImage src={image} />
       <div className="flex items-center justify-between mt-[6px]">
         <div className="flex items-center gap-2">
@@ -43,7 +45,7 @@ function ProjectCard({ title, category, year, image }: { title: string; category
           {year}
         </span>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -53,13 +55,15 @@ export default function MiddleColumn() {
       {/* Description */}
       <div className="px-4 pt-[140px]">
         <h2 className="font-inter font-semibold text-[22px] leading-[29px] text-cod-gray tracking-[-0.42px] max-w-[600px]">
-          Ux Ui Designer with 3 years of experience — specializing in crafting
-          visual experiences that feel intentional, refined, and human.
+          <BlurRevealText
+            text="Ux Ui Designer with 3 years of experience — specializing in crafting visual experiences that feel intentional, refined, and human."
+            charDelay={3}
+          />
         </h2>
       </div>
 
       {/* Spacer */}
-      <div className="h-[360px]" />
+      <div className="h-[250px]" />
 
       {/* Selected Work Header */}
       <div className="px-4 flex items-baseline justify-between">

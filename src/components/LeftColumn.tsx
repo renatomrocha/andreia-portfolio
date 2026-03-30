@@ -1,12 +1,12 @@
+import BlurRevealText from "./BlurRevealText";
+
 export default function LeftColumn() {
   return (
     <div className="flex flex-col h-full">
       {/* Intro */}
       <div className="mt-[140px]">
-        <h1 className="font-inter font-semibold text-[48px] leading-[1.1] tracking-[-0.42px]">
-          <span className="text-cod-gray block">Hello!</span>
-          <span className="text-cod-gray">I'm </span>
-          <span className="text-boulder">Andreia.</span>
+        <h1 className="font-inter font-semibold text-[48px] leading-[1.1] tracking-[-0.42px] text-cod-gray">
+          <BlurRevealText text={"Hello!\nI'm Andreia."} charDelay={5} />
         </h1>
       </div>
 
