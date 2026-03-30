@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cod-gray: #121212;
+  --color-boulder: #757575;
+  --color-mercury: #E3E3E3;
+
+  --font-koulen: "Koulen", system-ui;
+  --font-inter: "Inter", sans-serif;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+@utility scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
