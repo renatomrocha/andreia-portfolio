@@ -1,4 +1,5 @@
 import Marquee from "../Marquee";
+import BlurRevealText from "../BlurRevealText";
 
 const experiences = [
   {
@@ -58,12 +59,17 @@ export default function InfoMiddleColumn() {
       {/* Description */}
       <div className="px-4 pt-[140px]">
         <h2 className="font-inter font-semibold text-[22px] leading-[29px] text-cod-gray tracking-[-0.42px] max-w-[600px]">
-          I'm Andreia — a Ux Ui designer based in Portugal, with over 3 years
-          of experience crafting solutions for various fields.
+          <BlurRevealText
+            text="I'm Andreia — a Ux Ui designer based in Portugal, with over 3 years of experience crafting solutions for various fields."
+            charDelay={3}
+          />
         </h2>
-        <p className="font-inter font-semibold text-[22px] leading-[29px] text-cod-gray tracking-[-0.42px] max-w-[600px] mt-3">
-          Whether I'm designing an app or website I approach every project with
-          care, intention, and a strong sense of visual narrative.
+        <p className="max-w-[600px] mt-3">
+          <BlurRevealText
+            text="Whether I'm designing an app or website I approach every project with care, intention, and a strong sense of visual narrative."
+            className="font-inter text-[16px] leading-[24px] text-boulder tracking-[-0.42px]"
+            charDelay={3}
+          />
         </p>
       </div>
 

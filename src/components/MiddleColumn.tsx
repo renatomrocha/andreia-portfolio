@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import chatbotProject from "../assets/chatbot_project.png";
 import BlurRevealText from "./BlurRevealText";
+import FadeIn from "./FadeIn";
 import Marquee from "./Marquee";
 
 const projects = [
@@ -66,19 +67,23 @@ export default function MiddleColumn() {
       <div className="h-[250px]" />
 
       {/* Selected Work Header */}
-      <div className="px-4 flex items-baseline justify-between">
-        <h3 className="font-inter font-semibold text-[18px] text-cod-gray tracking-[-0.42px]">
-          Selected work
-        </h3>
-        <span className="font-inter text-[14px] text-boulder tracking-[-0.42px]">
-          (10)
-        </span>
-      </div>
+      <FadeIn delay={400}>
+        <div className="px-4 flex items-baseline justify-between">
+          <h3 className="font-inter font-semibold text-[18px] text-cod-gray tracking-[-0.42px]">
+            Selected work
+          </h3>
+          <span className="font-inter text-[14px] text-boulder tracking-[-0.42px]">
+            (10)
+          </span>
+        </div>
+      </FadeIn>
 
       {/* Projects */}
       <div className="px-4 mt-6 flex flex-col gap-5">
         {projects.map((project, i) => (
-          <ProjectCard key={i} {...project} />
+          <FadeIn key={i} delay={600 + i * 150}>
+            <ProjectCard {...project} />
+          </FadeIn>
         ))}
       </div>
 

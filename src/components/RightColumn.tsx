@@ -1,15 +1,18 @@
 import profilePic from "../assets/profile_pic.png";
+import FadeIn from "./FadeIn";
 
 export default function RightColumn() {
   return (
     <div className="flex flex-col h-full">
       {/* Profile Photo */}
       <div className="mt-[140px]">
-        <img
-          src={profilePic}
-          alt="Andreia"
-          className="w-full aspect-[470/620] object-cover rounded-lg"
-        />
+        <FadeIn delay={300}>
+          <img
+            src={profilePic}
+            alt="Andreia"
+            className="w-full aspect-[470/620] object-cover rounded-lg"
+          />
+        </FadeIn>
 
         {/* Info */}
         <div className="flex flex-col items-end gap-[1px] mt-8">

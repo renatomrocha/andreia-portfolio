@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 
 interface BlurRevealTextProps {
   text: string;
   className?: string;
+  style?: CSSProperties;
   charDelay?: number;
   blurDuration?: number;
 }
@@ -10,6 +11,7 @@ interface BlurRevealTextProps {
 export default function BlurRevealText({
   text,
   className = "",
+  style,
   charDelay = 15,
   blurDuration = 300,
 }: BlurRevealTextProps) {
@@ -27,32 +29,70 @@ export default function BlurRevealText({
     return () => clearTimeout(timeout);
   }, [revealedCount, text.length, charDelay]);
 
+  // Split text into words (preserving spaces) and newlines
+  const tokens = tokenize(text);
+  let charIndex = 0;
+
   return (
-    <span className={className}>
-      {text.split("").map((char, i) => {
-        if (char === "\n") {
-          return i < revealedCount ? <br key={i} /> : <span key={i} className="opacity-0">{"\n"}</span>;
+    <span className={className} style={style}>
+      {tokens.map((token, tokenIdx) => {
+        if (token === "\n") {
+          const i = charIndex++;
+          return i < revealedCount ? <br key={tokenIdx} /> : <span key={tokenIdx} className="opacity-0">{"\n"}</span>;
         }
 
-        if (i >= revealedCount) {
-          return (
-            <span key={i} className="opacity-0">
-              {char}
-            </span>
-          );
-        }
+        const startIndex = charIndex;
+        const chars = token.split("");
+        charIndex += chars.length;
 
         return (
-          <CharWithBlur
-            key={i}
-            char={char}
-            timestamp={charTimestamps[i]}
-            blurDuration={blurDuration}
-          />
+          <span key={tokenIdx} className="inline-block whitespace-pre">
+            {chars.map((char, ci) => {
+              const i = startIndex + ci;
+              if (i >= revealedCount) {
+                return (
+                  <span key={i} className="opacity-0">
+                    {char}
+                  </span>
+                );
+              }
+              return (
+                <CharWithBlur
+                  key={i}
+                  char={char}
+                  timestamp={charTimestamps[i]}
+                  blurDuration={blurDuration}
+                />
+              );
+            })}
+          </span>
         );
       })}
     </span>
   );
+}
+
+// Split text into word tokens (word + trailing space) and newlines
+function tokenize(text: string): string[] {
+  const tokens: string[] = [];
+  let current = "";
+
+  for (const char of text) {
+    if (char === "\n") {
+      if (current) tokens.push(current);
+      tokens.push("\n");
+      current = "";
+    } else if (char === " ") {
+      current += char;
+      tokens.push(current);
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+  if (current) tokens.push(current);
+
+  return tokens;
 }
 
 function CharWithBlur({
@@ -72,7 +112,7 @@ function CharWithBlur({
     function animate() {
       const elapsed = Date.now() - timestamp;
       const progress = Math.min(elapsed / blurDuration, 1);
-      const eased = 1 - (1 - progress) * (1 - progress); // ease-out quadratic
+      const eased = 1 - (1 - progress) * (1 - progress);
 
       setState({
         blur: (1 - eased) * 8,

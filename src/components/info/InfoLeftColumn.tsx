@@ -1,4 +1,5 @@
 import profilePic from "../../assets/profile_pic.png";
+import BlurRevealText from "../BlurRevealText";
 
 export default function InfoLeftColumn() {
   return (
@@ -6,7 +7,7 @@ export default function InfoLeftColumn() {
       {/* Title */}
       <div className="mt-[140px]">
         <h1 className="font-inter font-semibold text-[48px] leading-[1.1] tracking-[-0.42px] text-cod-gray">
-          About me.
+          <BlurRevealText text="About me." />
         </h1>
       </div>
 
