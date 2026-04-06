@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
-import chatbotProject from "../assets/chatbot_project.png";
-import BlurRevealText from "./BlurRevealText";
-import FadeIn from "./FadeIn";
-import Marquee from "./Marquee";
+import chatbotProject from "../../assets/chatbot_project.png";
+import ebuddy from "../../assets/ebuddy.png";
+import electrifyLite from "../../assets/electrify.png";
+import owlTechno from "../../assets/owl_techno.png";
+import soapProject from "../../assets/soap_project.png";
+import sportsApp from "../../assets/sports_app.png";
+import BlurRevealText from "../BlurRevealText";
+import FadeIn from "../FadeIn";
+import Marquee from "../Marquee";
 
 const projects = [
-  { title: "Project title", category: "Category", year: "2025", image: chatbotProject, projectRoute: "chatbot" },
-  { title: "Project title", category: "Category", year: "2025", projectRoute: "project-2" },
-  { title: "Project title", category: "Category", year: "2025", projectRoute: "project-3" },
-  { title: "Project title", category: "Category", year: "2025", projectRoute: "project-4" },
+  { title: "Chatbot", category: "Electric Mobility Assistance", year: "2025", image: chatbotProject, projectRoute: "chatbot" },
+  { title: "Pulse", category: "SaaS Platform", year: "2025", image: soapProject, projectRoute: "pulse" },
+  { title: "Electrify Lite", category: "Electric Mobility", year: "2025", image: electrifyLite, projectRoute: "electrify-lite" },
+  { title: "eBuddy", category: "Registration process", year: "2025", projectRoute: "ebuddy", image: ebuddy },
+  { title: "Sports app", category: "E-commerce app", year: "2025", projectRoute: "sports-app", image: sportsApp },
+  { title: "Owl app", category: "Music tickets", year: "2025", projectRoute: "owl-techno", image: owlTechno },
+
 ];
 
 function ProjectImage({ src }: { src?: string }) {

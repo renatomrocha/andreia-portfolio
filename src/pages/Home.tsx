@@ -1,7 +1,7 @@
-import ThreeColumnLayout from "../components/ThreeColumnLayout";
+import MiddleColumn from "../components/home/MiddleColumn";
 import LeftColumn from "../components/LeftColumn";
-import MiddleColumn from "../components/MiddleColumn";
 import RightColumn from "../components/RightColumn";
+import ThreeColumnLayout from "../components/ThreeColumnLayout";
 
 export default function Home() {
   return (
