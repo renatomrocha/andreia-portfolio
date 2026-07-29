@@ -4,7 +4,6 @@ import ebuddy from "../../assets/ebuddy.png";
 import electrifyLite from "../../assets/electrify.png";
 import owlTechno from "../../assets/owl_techno.png";
 import soapProject from "../../assets/soap_project.png";
-import sportsApp from "../../assets/sports_app.png";
 import BlurRevealText from "../BlurRevealText";
 import FadeIn from "../FadeIn";
 import Marquee from "../Marquee";
@@ -14,7 +13,6 @@ const projects = [
   { title: "Pulse", category: "SaaS Platform", year: "2025", image: soapProject, projectRoute: "saas" },
   { title: "Electrify Lite", category: "Electric Mobility", year: "2025", image: electrifyLite, projectRoute: "electrify-lite" },
   { title: "eBuddy", category: "Registration process", year: "2025", projectRoute: "ebuddy", image: ebuddy },
-  { title: "Sports app", category: "E-commerce app", year: "2025", projectRoute: "sports-app", image: sportsApp },
   { title: "Owl app", category: "Music tickets", year: "2025", projectRoute: "owl-techno", image: owlTechno },
 
 ];
