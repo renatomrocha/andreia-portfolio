@@ -11,7 +11,7 @@ import Marquee from "../Marquee";
 
 const projects = [
   { title: "Chatbot", category: "Electric Mobility Assistance", year: "2025", image: chatbotProject, projectRoute: "chatbot" },
-  { title: "Pulse", category: "SaaS Platform", year: "2025", image: soapProject, projectRoute: "pulse" },
+  { title: "Pulse", category: "SaaS Platform", year: "2025", image: soapProject, projectRoute: "saas" },
   { title: "Electrify Lite", category: "Electric Mobility", year: "2025", image: electrifyLite, projectRoute: "electrify-lite" },
   { title: "eBuddy", category: "Registration process", year: "2025", projectRoute: "ebuddy", image: ebuddy },
   { title: "Sports app", category: "E-commerce app", year: "2025", projectRoute: "sports-app", image: sportsApp },

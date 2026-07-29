@@ -1,5 +1,9 @@
 import { useParams } from "react-router-dom";
 import { ChatbotProject } from "../components/work/ChatbotProject";
+import { SaasProject } from "../components/work/SaasProject";
+import { EbuddyProject } from "../components/work/EbuddyProject";
+import { ElectrifyProject } from "../components/work/ElectrifyProject";
+import { OwlProject } from "../components/work/OwlProject";
 import ProjectLayout from "../components/work/ProjectLayout";
 
 const projects: Record<
@@ -12,7 +16,11 @@ const projects: Record<
     middle: React.ReactNode;
   }
 > = {
-  chatbot: ChatbotProject
+  chatbot: ChatbotProject,
+  saas: SaasProject,
+  ebuddy: EbuddyProject,
+  "electrify-lite": ElectrifyProject,
+  "owl-techno": OwlProject,
 };
 
 export default function Work() {
