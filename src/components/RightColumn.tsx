@@ -10,7 +10,7 @@ export default function RightColumn() {
           <img
             src={profilePic}
             alt="Andreia"
-            className="w-full aspect-[470/620] object-cover rounded-lg"
+            className="w-4/5 ml-auto aspect-[470/620] object-cover rounded-lg"
           />
         </FadeIn>
 

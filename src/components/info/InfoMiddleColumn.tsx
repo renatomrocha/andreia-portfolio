@@ -5,7 +5,7 @@ const experiences = [
   {
     title: "Ux Ui Designer",
     company: "New Consulting",
-    period: "2025 - present",
+    period: "'25 - Present",
     description:
       "Crafting intuitive SaaS experiences by simplifying complex workflows into clear, user-friendly interfaces across devices, while building scalable and consistent design systems that support growth.",
   },
@@ -65,7 +65,9 @@ Outside of work, you’ll usually find me sewing my own clothes, staying active 
             Experience
           </h2>
           <a
-            href="#"
+            href="/cv_andreia.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-inter font-semibold text-[14px] text-cod-gray tracking-[-0.42px] underline"
           >
             Download CV

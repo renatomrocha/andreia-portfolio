@@ -79,7 +79,7 @@ export default function MiddleColumn() {
             Selected work
           </h3>
           <span className="font-inter text-[14px] text-boulder tracking-[-0.42px]">
-            (10)
+            ({projects.length})
           </span>
         </div>
       </FadeIn>
