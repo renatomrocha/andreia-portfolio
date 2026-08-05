@@ -204,7 +204,7 @@ export default function ElectrifyMiddle() {
 
             {/* UI guidelines */}
             <FadeIn delay={550}>
-                <div className="flex flex-col gap-12">
+                <div className="flex flex-col gap-12 bg-[#F7F7F7] p-12">
                     <p className="font-inter font-semibold text-[38px] text-cod-gray tracking-[-0.42px] text-center">
                         UI Guidelines
                     </p>

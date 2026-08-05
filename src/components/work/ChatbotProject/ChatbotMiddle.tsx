@@ -35,17 +35,17 @@ const hoverCards = [
   {
     title: "Progressive disclosure",
     description:
-      "Combined open chat input with suggested prompts to support both exploratory and goal-oriented behaviors.",
+      "Information unfolds naturally as the conversation develops, revealing just what's needed at each step so users are never overwhelmed.",
   },
   {
     title: "Structured Responses",
     description:
-      "Combined open chat input with suggested prompts to support both exploratory and goal-oriented behaviors.",
+      "Answers go beyond plain text, turning structured output into rich, UI-friendly components that are easy to scan and act on.",
   },
   {
     title: "Human-Centered",
     description:
-      "Combined open chat input with suggested prompts to support both exploratory and goal-oriented behaviors.",
+      "Every interaction is designed around real user needs, keeping the tone warm, supportive, and reassuring throughout the journey.",
   },
 ];
 
@@ -133,9 +133,9 @@ export default function ChatbotMiddle() {
               <div className="p-16 bg-[#2f80eb] flex items-center justify-center">
                 <video src={chatbotUserFlow1} autoPlay loop muted playsInline className="w-3/4 h-full object-cover " />
               </div>,
-              <div className="flex flex-col h-full pt-12  items-center text-center px-12 bg-[#F7F7F7]">
-                <p className="font-inter font-semibold text-[#1D75E7] text-[80px] tracking-[-0.42px] mb-12">1</p>
-                <p className="font-inter text-[13px] text-cod-gray font-bold tracking-[-0.42px] leading-normal mt-1 mb-8">
+              <div className="flex flex-col h-full pt-12 items-center text-center px-12 bg-[#F7F7F7]">
+                <p className="font-inter font-semibold text-[#1D75E7] text-[80px] tracking-[-0.42px] mb-6">1</p>
+                <p className="font-inter text-[13px] text-cod-gray font-bold tracking-[-0.42px] leading-normal mt-1 mb-4">
                   ONBOARDING & FIRST INTERACTION
                 </p>
                 <p className="font-inter text-[13px] text-boulder tracking-[-0.42px] leading-normal mt-1">
